@@ -123,3 +123,22 @@ const connect = ReactRedux.connect;
 const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps) (Presentational)
 
 // Connect Redux to the messages app
+const Provider = ReactRedux.Provider;
+const connect = ReactRedux.connect;
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational)
+
+class AppWrapper extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <Provider store={store}>
+        <Container />
+      </Provider>
+    );
+  }
+};
+
+// Extract local state into Redux

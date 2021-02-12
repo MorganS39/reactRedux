@@ -108,4 +108,18 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-// 
+// Connect Redux to React
+class Presentational extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <h3>This is a Presentational Component</h3>
+  }
+};
+
+const connect = ReactRedux.connect;
+
+const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps) (Presentational)
+
+// Connect Redux to the messages app

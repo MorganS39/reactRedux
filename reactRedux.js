@@ -182,5 +182,3 @@ class Presentational extends React.Component {
     );
   }
 };
-
-// Moving forward from here

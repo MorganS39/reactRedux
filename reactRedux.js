@@ -69,4 +69,19 @@ const messageReducer = (pastState = [], action) => {
 };
 const store = Redux.createStore(messageReducer);
 
-//
+// Use provider to connect Redux to React
+// This for some reason did not work when I typed it the first time.
+// I looked up the answer and it was exactly what I had typed but then retyped it and it worked?
+const Provider = ReactRedux.Provider;
+
+class AppWrapper extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <DisplayMessages />
+      </Provider>
+    );
+  }
+};
+
+// Map state to props
